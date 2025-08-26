@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <body>
+    <h2>Registrar vuelo</h2>
+    <form method="post" style="border:1px solid #ccc; border-radius:8px; padding:24px; max-width:400px; margin:auto; box-shadow:2px 2px 8px #eee;">
+      {% csrf_token %}
+      <div style="margin-bottom:16px;">
+        <label for="id_name">Nombre del vuelo:</label><br>
+        {{ form.name }}
+      </div>
+      <div style="margin-bottom:16px;">
+        <label for="id_ftype">Tipo de vuelo:</label><br>
+        {{ form.ftype }}
+      </div>
+      <div style="margin-bottom:16px;">
+        <label for="id_price">Precio:</label><br>
+        {{ form.price }}
+      </div>
+      <button type="submit" style="background:#1976d2; color:white; border:none; padding:8px 16px; border-radius:4px; cursor:pointer;">Guardar</button>
+    </form>
+    <p style="text-align:center;"><a href="{% url 'flights:home' %}">Inicio</a></p>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <body>
+    <h2>Estadísticas</h2>
+    <p>
+      {{ n_nacionales }} Nacional(es),
+      {{ n_internacionales }} Internacional(es)
+    </p>
+    <p>
+      Precio promedio de vuelos nacionales:
+      {% if avg_nacionales %} ${{ avg_nacionales|floatformat:2 }} {% else %} N/A {% endif %}
+    </p>
+    <p><a href="{% url 'flights:home' %}">Inicio</a></p>
+  </body>
+</html>
